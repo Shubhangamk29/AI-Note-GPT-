@@ -10,7 +10,7 @@ const app = express();
 //middlewares
 app.use(
   cors({
-    origin: "https://wonderful-cupcake-88e426.netlify.app/", // frontend origin
+    origin: "https://wonderful-cupcake-88e426.netlify.app", // frontend origin
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
