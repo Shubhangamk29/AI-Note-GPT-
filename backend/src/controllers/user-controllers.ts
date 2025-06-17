@@ -46,7 +46,7 @@ export const userSignup = async (
     expires.setDate(expires.getDate() + 7);
     res.cookie(COOKIE_NAME, token, {
       path: "/",
-      domain: "localhost", //change the domain when deploying
+      domain: "https://ai-note-gpt.onrender.com", //change the domain when deploying
       expires,
       httpOnly: true,
       signed: true,
@@ -84,7 +84,7 @@ export const userLogin = async (
 
     res.clearCookie(COOKIE_NAME, {
       httpOnly: true,
-      domain: "localhost", //chnage it at time of deployment
+      domain: "https://ai-note-gpt.onrender.com", //chnage it at time of deployment
       signed: true,
       path: "/",
     });
@@ -94,7 +94,7 @@ export const userLogin = async (
     expires.setDate(expires.getDate() + 7);
     res.cookie(COOKIE_NAME, token, {
       path: "/",
-      domain: "localhost",
+      domain: "https://ai-note-gpt.onrender.com",
       expires,
       httpOnly: true,
       signed: true,
@@ -151,7 +151,7 @@ export const userLogout = async (
 
     res.clearCookie(COOKIE_NAME, {
       httpOnly: true,
-      domain: "localhost",
+      domain: "https://ai-note-gpt.onrender.com",
       signed: true,
       path: "/",
     });
