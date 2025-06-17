@@ -50,6 +50,8 @@ export const userSignup = async (
       expires,
       httpOnly: true,
       signed: true,
+      secure: false, // ✅ should be true in production with HTTPS
+      sameSite: "lax",
     });
 
     return res
@@ -96,6 +98,8 @@ export const userLogin = async (
       expires,
       httpOnly: true,
       signed: true,
+      secure: false, // ✅ should be true in production with HTTPS
+      sameSite: "lax",
     });
 
     return res
