@@ -23,14 +23,23 @@ export const generateChatCompletion = async (
     user.chats.push({ content: message, role: "user" });
 
     // send all chats with new one to openAI API
+    
     const config = configureOpenAI();
     const openai = new OpenAIApi(config);
     // get latest response
-    const chatResponse = await openai.createChatCompletion({
+    try{
+      const chatResponse = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: chats,
+      
     });
     user.chats.push(chatResponse.data.choices[0].message);
+    }catch(error){
+      user.chats.push({id:'qwsderf',role:'user',content:'Required  OpenAI API payment to generate Response'});
+    }
+    
+
+    
     await user.save();
     return res.status(200).json({ chats: user.chats });
   } catch (error) {
