@@ -1,4 +1,3 @@
-import React from "react";
 
 const Footer = () => {
     return (
@@ -18,7 +17,6 @@ const Footer = () => {
                     <link 
                     style={{ color:"white" }}
                     className="nav-link"
-                    to={"https://github.com/Shubhangamk29/Note-GPT"}
                     >
                         Note-GPT
                     </link>
@@ -28,3 +26,4 @@ const Footer = () => {
         </footer>
     );
 };
+export default Footer;
