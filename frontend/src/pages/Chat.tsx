@@ -60,7 +60,7 @@ const Chat = () => {
   if (!auth?.user) {
     navigate("/login");
   }
-}, [auth, navigate]);
+}, [auth]);
 
   return (
     <Box
